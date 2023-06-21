@@ -1,14 +1,14 @@
 #include "Point2.h"
 #include "ConstForOpenGeometryLib.h"
-#include <cmath>
+
 
 using namespace OpenGeometry;
 
 
-inline void Point2::copy(const double& x, const double& y)
+void Point2::copy(const Point2& rhs)
 {
-	m_x = x;
-	m_y = y;
+	m_x = rhs.x();
+	m_y = rhs.y();
 }
 
 
@@ -16,7 +16,7 @@ inline void Point2::copy(const double& x, const double& y)
 Point2& Point2::operator=(const Point2& rhs)
 {
 	if (this != &rhs)
-		copy(rhs.x(), rhs.y());
+		copy(rhs);
 
 	return *this;
 }

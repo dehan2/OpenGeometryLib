@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClInclude Include="include\ConstForOpenGeometryLib.h" />
     <ClInclude Include="include\Point2.h" />
+    <ClInclude Include="include\Point3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Point2.cpp" />
+    <ClCompile Include="src\Point3.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
