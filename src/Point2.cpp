@@ -1,5 +1,6 @@
 #include "Point2.h"
 #include "ConstForOpenGeometryLib.h"
+#include <random>
 
 
 using namespace OpenGeometry;
@@ -104,4 +105,16 @@ bool Point2::operator==(const Point2& rhs) const
 		return true;
 	else
 		return false;
+}
+
+
+
+void Point2::perturb(const double& stdDev)
+{
+	std::random_device rd;
+	std::default_random_engine gen(rd());
+
+	std::normal_distribution<double> dis(0, stdDev);
+	m_x += dis(gen);
+	m_y += dis(gen);
 }

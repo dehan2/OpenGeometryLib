@@ -36,6 +36,19 @@ namespace OpenGeometry
 		void operator/=(const double& rhs) { Point2::operator/=(rhs); }
 		Vector2& operator/(const double& rhs);
 		friend Vector2 operator*(const double& lhs, const Vector2& rhs) { return Vector2(lhs * rhs.x(), lhs * rhs.y()); }
-		friend Vector2 operator-(const Vector2& point) { return Vector2(-point.x(), -point.y()); }
+		friend Vector2 operator-(const Vector2& vector) { return Vector2(-vector.x(), -vector.y()); }
+
+		// Utility functions
+		Vector2 unit() const;
+		void normalize();
+
+		inline double magnitude() const { return sqrt(magnitude_square()); }
+		inline double magnitude_square() const { return pow(x(), 2) + pow(y(), 2); }
+
+		friend double angle_between_vectors(const Vector2& vector1, const Vector2& vector2);
+		friend std::pair<double, double> span_point(const Vector2& vector, const Vector2& basis1, const Vector2& basis2);
+
+		inline friend double dot(const Vector2& vector1, const Vector2& vector2) { return vector1.x() * vector2.x() + vector1.y() * vector2.y(); }
+		inline friend double cross(const Vector2& vector1, const Vector2& vector2) { return vector1.x() * vector2.y() - vector1.y() * vector2.x(); };
 	};
 }

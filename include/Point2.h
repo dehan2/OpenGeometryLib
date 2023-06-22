@@ -11,7 +11,7 @@ namespace OpenGeometry
 {
 	class Point2
 	{
-	private:
+	protected:
 		double m_x = 0.0f;
 		double m_y = 0.0f;
 
@@ -58,5 +58,7 @@ namespace OpenGeometry
 
 		inline double distance(const Point2& rhs) const { return sqrt(pow(x() - rhs.x(), 2) + pow(y() - rhs.y(), 2)); }
 		friend inline double distance(const Point2& lhs, const Point2& rhs) { return lhs.distance(rhs); }
+
+		virtual void perturb(const double& stdDev = 1.0);
 	};
 }
