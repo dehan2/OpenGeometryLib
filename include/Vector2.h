@@ -49,6 +49,6 @@ namespace OpenGeometry
 		friend std::pair<double, double> span_point(const Vector2& vector, const Vector2& basis1, const Vector2& basis2);
 
 		inline friend double dot(const Vector2& vector1, const Vector2& vector2) { return vector1.x() * vector2.x() + vector1.y() * vector2.y(); }
-		inline friend double cross(const Vector2& vector1, const Vector2& vector2) { return vector1.x() * vector2.y() - vector1.y() * vector2.x(); };
+		inline friend double cross(const Vector2& vector1, const Vector2& vector2) { return vector1.x() * vector2.y() - vector1.y() * vector2.x(); }
 	};
 }

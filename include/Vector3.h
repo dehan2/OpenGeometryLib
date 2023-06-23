@@ -44,9 +44,8 @@ namespace OpenGeometry
 		inline double magnitude_square() const { return pow(x(), 2) + pow(y(), 2) + pow(z(), 2); }
 
 		friend double angle_between_vectors(const Vector3& vector1, const Vector3& vector2);
-		friend std::pair<double, double> span_point(const Vector3& vector, const Vector3& basis1, const Vector3& basis2);
-
-		inline friend double dot(const Vector3& vector1, const Vector3& Vector3) { return vector1.x() * Vector3.x() + vector1.y() * Vector3.y(); }
-		inline friend double cross(const Vector3& vector1, const Vector3& Vector3) { return vector1.x() * Vector3.y() - vector1.y() * Vector3.x(); };
+		
+		inline friend double dot(const Vector3& vector1, const Vector3& vector2) { return vector1.x() * vector2.x() + vector1.y() * vector2.y() + vector1.z() * vector2.z(); }
+		friend Vector3 cross(const Vector3& vector1, const Vector3& vector2);
 	};
 }
